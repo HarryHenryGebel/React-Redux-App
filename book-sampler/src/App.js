@@ -4,7 +4,6 @@ export default function App() {
   debugger;
   return (
     <>
-      <p>{goodreadsKey} {goodreadsSecret}</p>
     </>
   );
 }

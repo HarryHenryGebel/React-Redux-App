@@ -1,9 +1,13 @@
 import React from 'react';
 
+export const goodreadsKey = process.env.REACT_APP_GOODREADS_KEY,
+             goodreadsSecret = process.env.REACT_APP_GOODREADS_SECRET;
+
 export default function App() {
+  debugger;
   return (
     <>
-      <p>{JSON.stringify(process.env)}</p>
+      <p>{goodreadsKey} {goodreadsSecret}</p>
     </>
   );
 }

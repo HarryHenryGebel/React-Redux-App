@@ -2,3 +2,4 @@
   base = "book-sampler/"
   publish = "build/"
   command = "npm run build"
+  environment = { NODE_ENV = "production" }

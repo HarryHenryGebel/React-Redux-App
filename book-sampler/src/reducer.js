@@ -1,6 +1,8 @@
 import {FETCH_BOOK} from "./actions";
 
 const initialState = {
+  isFetching: false,
+  error: ""
 };
 
 export default function reducer (state = initialState, action) {

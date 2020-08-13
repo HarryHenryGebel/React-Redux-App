@@ -2,10 +2,10 @@ import requester from "easier-requests";
 
 export const FETCH_BOOK = "FETCH_BOOK";
 
-const goodreadsKey = process.env.REACT_APP_GOODREADS_KEY,
-      goodreadsSecret = process.env.REACT_APP_GOODREADS_SECRET;
+const goodreadsKey = process.env.REACT_APP_GOODREADS_KEY;
+//      goodreadsSecret = process.env.REACT_APP_GOODREADS_SECRET;
 
-const lastRequestTime = 0;
+let lastRequestTime = 0;
 export function fetchBook (dispatch, title, author) {
   async function _fetchBook() {
     debugger;

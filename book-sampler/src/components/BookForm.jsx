@@ -1,12 +1,15 @@
 import React, {useState} from "react";
+import {connect} from "react-redux";
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import TextField from '@material-ui/core/TextField';
 
+import {fetchBook} from "../actions";
+
 const initialValues = {author: "", title: ""};
 
-export default function BookForm () {
+function BookForm (props) {
   const [values, setValues] = useState(initialValues);
 
   function onChange(event) {
@@ -18,7 +21,7 @@ export default function BookForm () {
   return (
     <>
       <Box m={1}>
-        <TextField fullwidth
+        <TextField fullWidth
                    id="title"
                    label="Title"
                    onChange={onChange}
@@ -28,7 +31,7 @@ export default function BookForm () {
       </Box>
       <br/>
       <Box m={1}>
-        <TextField fullwidth
+        <TextField fullWidth
                    id="author"
                    label="Author"
                    onChange={onChange}
@@ -38,7 +41,10 @@ export default function BookForm () {
       <br/>
       <Box m={1}>
         <Button disabled={values.title.trim() === ""}
-                onClick={() => true}
+                onClick={() => {
+                  props.fetchBook(values.title.trim(), values.author.trim());
+                  setValues(initialValues);
+                }}
                 startIcon={<SearchIcon />}
                 variant="contained">
           Search
@@ -47,3 +53,4 @@ export default function BookForm () {
     </>
   );
 }
+export default connect(null, {fetchBook})(BookForm);

@@ -6,7 +6,7 @@ const initialState = {
 };
 
 export default function reducer (state = initialState, action) {
-  switch(action.command) {
+  switch(action.type) {
   case FETCH_BOOK:
     return {...state,
             isFetching: true,

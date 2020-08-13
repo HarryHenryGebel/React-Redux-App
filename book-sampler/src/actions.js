@@ -30,6 +30,7 @@ export function fetchBook (dispatch, title, author) {
   }
 
   dispatch({command: FETCH_BOOK, title: title});
+  dispatch({type: FETCH_BOOK, title: title});
 
   // per TOS, limit requests to 1 per second
   const nextRequestTime = lastRequestTime + 1000,

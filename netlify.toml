@@ -1,5 +1,5 @@
 [build]
   base = "book-sampler/"
   publish = "build/"
-  command = "npx run build"
+  command = "npm run build"
   environment = { NODE_ENV = "production" }

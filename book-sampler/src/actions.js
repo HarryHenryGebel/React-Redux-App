@@ -34,6 +34,6 @@ export function fetchBook (title, author) {
     // per TOS, limit requests to 1 per second
     const nextRequestTime = lastRequestTime + 1000,
           timeUntilRequest = nextRequestTime - Date.now();
-    setTimeout(_fetchBook, timeUntilRequest);
+    setTimeout(_fetchBook, timeUntilRequest > 0 ? timeUntilRequest : 0);
   };
 }

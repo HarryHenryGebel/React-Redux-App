@@ -29,6 +29,7 @@ export function fetchBook (title, author) {
         lastRequestTime = Date.now();
       }
     }
+    debugger;
     dispatch({type: FETCH_BOOK, title: title});
 
     // per TOS, limit requests to 1 per second
